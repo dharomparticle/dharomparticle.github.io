@@ -1,0 +1,5 @@
+BrightTag.site('0M6ZVb2',function(s){
+s.domready(function(){
+s.tag('\x3cscript type\x3d\x22text/javascript\x22\x3e\nwindow._oiqq \x3d window._oiqq || [];\n_oiqq.push([\x27oiq_addPageLifecycle\x27, \x27mpe2\x27]);\n_oiqq.push([\x27oiq_doTag\x27]);\n(function() {\n\tvar oiq \x3d document.createElement(\x27script\x27);\n\toiq.type \x3d \x27text/javascript\x27;\n\toiq.async \x3d true;\n\toiq.src \x3d document.location.protocol + \x27//px.owneriq.net/stas/s/b9r11j.js\x27;\n\tvar s \x3d document.getElementsByTagName(\x27script\x27)[0];\n\ts.parentNode.insertBefore(oiq, s);\n})();\n\x3c/script\x3e',{tagId:6388303});
+});
+});
