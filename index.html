@@ -16,6 +16,20 @@
   )("us1-8d596d4b93fe1e468d17ecb35ded033e");
 </script>
 	
+	
+	<!-- log the page view with details -->
+mParticle.logPageView(
+	"BradsDeals.com",
+	{registered: "y", page: "home"},
+	{"Google.Label": "search"}
+);
+	
+	mParticle.logEvent(
+  'Deal Saved',
+  mParticle.EventType.Navigation,
+  {'category':'Travel','title':'Paris'}
+);
+	
 	<!-- End mParticle web SDK -->
 	
 	
