@@ -1,0 +1,90 @@
+(function () {var f = function () {
+	function loadChains(chains, limit, onChainDone) {
+    function newImageLoader(url) {
+        return function () {
+            var e = new Image();
+            addListeners(e);
+            e.src = url;
+        };
+    }
+
+    function newScriptLoader(url) {
+        return function () {
+            var e = document.createElement('script');
+            e.type = 'text/javascript';
+            e.async = true;
+            addListeners(e);
+            e.src = url;
+            document.head.appendChild(e);
+        };
+    }
+
+    function newIframeLoader(url) {
+        return function () {
+            var e = document.createElement('iframe');
+            e.style.display = 'none';
+            e.width = 1;
+            e.height = 1;
+            addListeners(e);
+            e.src = url;
+            document.body.appendChild(e);
+        };
+    }
+
+    function addListeners(e) {
+        addLoadErrorListeners(e, loadNext);
+        if (typeof onChainDone === 'function') {
+            addLoadErrorListeners(e, onChainDone);
+        }
+    }
+
+    function addLoadErrorListeners(e, listener) {
+        if (typeof e.addEventListener === 'function') {
+            e.addEventListener('load', listener, false);
+            e.addEventListener('error', listener, false);
+        } else if (typeof e.attachEvent === 'function') {
+            e.attachEvent('onload', listener);
+            e.attachEvent('onerror', listener);
+        }
+    }
+
+    function loadNext() {
+        var next = loaders.shift();
+        if (typeof next === "function") {
+            setTimeout(next);
+        }
+    }
+
+    var loaders = chains.reduce(function (acc, value) {
+        var mode = value[0];
+        var url = value[1];
+
+        switch (mode) {
+            case 'image':
+                acc.push(newImageLoader(url));
+                break;
+            case 'script':
+                acc.push(newScriptLoader(url));
+                break;
+            case 'iframe':
+                acc.push(newIframeLoader(url));
+                break;
+        }
+        return acc;
+    }, []);
+
+    for (var i = 0; i < limit; i++) {
+        loadNext();
+    }
+}
+
+	var chains = [];
+	chains.push(['image', 'https://cm.g.doubleclick.net/pixel?google_nid=liveramp&google_hm=WGMzMDcwWkt1R2wydTlkYnlGLWJDeF9rYXBsOWE4ZHBfbjFmWGhfSy01ZlFqQVp5TQ==&google_cm']);
+	chains.push(['image', 'https://ads.scorecardresearch.com/p?c1=9&c2=17057153&c3=1&c6=579c2265650c33385266410fe68a9fb1c632b77e2cd7d126f93fc4c84fe99757ffebc811cafadc33&&cj=1&rn=06686200']);
+	chains.push(['image', 'https://d.turn.com/r/dd/id/L2NzaWQvMS9jaWQvMTk1NjkwMzUvdC8y/dpuid/7710734aad76b3cdb098de936208c80c9315deb877e0410c55a2cb69f5696c6a3528d9f17d145da0/url/https://idsync.rlcdn.com/367408.gif?partner_uid=$!{TURN_UUID}']);
+
+	loadChains(chains, 10, (typeof onDone === "function") ? onDone : null);
+	};
+
+	if (document.body) { f(); } else { document.addEventListener('DOMContentLoaded', f); }
+}());
