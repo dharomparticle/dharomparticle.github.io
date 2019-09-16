@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="23px" height="19px" viewBox="0 0 23 19" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 53.2 (72643) - https://sketchapp.com -->
+    <title>checkmark</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" opacity="0.397879464" stroke-linecap="round" stroke-linejoin="round">
+        <g id="Step-1-Desktop_email-error" transform="translate(-1052.000000, -432.000000)" stroke="#27A181" stroke-width="2.5">
+            <g id="Group-11" transform="translate(857.000000, 280.000000)">
+                <g id="Group-10" transform="translate(0.000000, 44.000000)">
+                    <path d="M202.748679,124.357679 L197.228679,118.669679 C196.918679,118.351679 196.924679,117.838679 197.241679,117.528679 L199.546679,115.274679 C199.863679,114.963679 200.376679,114.969679 200.686679,115.286679 L204.346679,118.965679 L213.055679,110.228679 C213.372679,109.918679 213.885679,109.924679 214.195679,110.241679 L216.450679,112.546679 C216.760679,112.863679 216.754679,113.377679 216.437679,113.687679 L204.799679,125.346679 C204.482679,125.656679 203.969679,125.650679 203.659679,125.334679 L202.748679,124.357679 Z" id="checkmark"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
